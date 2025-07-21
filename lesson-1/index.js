@@ -1,6 +1,6 @@
 require("./country_1");
 require("./country_2");
-// require("./mathUtils");
+require("./mathUtils");
 
 (() => {
   const countryName = "Uzbekistan";
