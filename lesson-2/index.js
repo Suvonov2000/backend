@@ -20,3 +20,5 @@ console.log(path.dirname(__filename));
 
 console.log(path.extname(__filename));
 //filenamegacha hammasini o'chirib .jsni chiqoradi//
+
+console.log(path.join("/user", "admin", "documents", "file.txt"));
