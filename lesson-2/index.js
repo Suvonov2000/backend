@@ -1,9 +1,22 @@
 const path = require("node:path");
 
 console.log(__dirname);
-console.log(__filename);
+//papkagacha chiqorishi uchun//
 
-console.log(path.basename(__filename, "js"));
+console.log(__filename);
+//filenamegacha chiqorish uchun//
+
+console.log(path.basename(__filename, ".js"));
+//faqat oxiridan olib tashlash uchun oxirgi file nomini chiqorish uchun //
+
 console.log(path.basename(__dirname));
+//faqat oxirdagi papkani chiqoradi
 
 console.log(path.basename(__filename));
+//oxirgi fileni chiqorib beradi//
+
+console.log(path.dirname(__filename));
+//basename bilan birxil//
+
+console.log(path.extname(__filename));
+//filenamegacha hammasini o'chirib .jsni chiqoradi//
