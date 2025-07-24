@@ -1,2 +1,2 @@
-const countryName = "jp";
+const countryName = "japan";
 console.log(countryName);
