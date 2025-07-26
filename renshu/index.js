@@ -16,3 +16,13 @@ console.log(path.normalize(pathToNormalize));
 
 const relativePath = "documents/file.txt";
 const absolutePath = path.resolve(relativePath);
+
+const pathObject = {
+  root: "/",
+  dir: "Users/umidjon/suvonov/desktop/lesson/node",
+  base: "index.js",
+  ext: "js",
+  name: "index",
+};
+
+console.log(path.format(pathObject));
