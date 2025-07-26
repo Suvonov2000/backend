@@ -13,3 +13,6 @@ console.log(path.join(__dirname, "documents", "node.txt"));
 
 const pathToNormalize = "user../admin//me/you//index.js";
 console.log(path.normalize(pathToNormalize));
+
+const relativePath = "documents/file.txt";
+const absolutePath = path.resolve(relativePath);
