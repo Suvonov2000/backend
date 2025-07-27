@@ -7,4 +7,7 @@ const connectHandler = () => {
 };
 
 eventEmitter.on("connect", connectHandler);
+
+eventEmitter.emit("connect");
+eventEmitter.removeListener("connect", connectHandler);
 eventEmitter.emit("connect");
