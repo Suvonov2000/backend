@@ -21,3 +21,5 @@ eventEmitter.on("greet", (surname, name) => {
   console.log(`Hello ${name} ${surname}`);
 });
 eventEmitter.emit("greet", "suvonov", "umidjon");
+
+console.log(eventEmitter.listenerCount("connect"));
