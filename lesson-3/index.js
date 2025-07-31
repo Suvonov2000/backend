@@ -23,3 +23,19 @@ eventEmitter.on("greet", (surname, name) => {
 eventEmitter.emit("greet", "suvonov", "umidjon");
 
 console.log(eventEmitter.listenerCount("connect"));
+
+// class mavzusi
+
+const PizzaShop = require("./pizza-shop");
+const DrinkMachine = require("./drinks");
+
+const pizzaShop = new PizzaShop();
+const drinkMachine = new DrinkMachine();
+
+pizzaShop.on("order", (size, topping) => {
+  console.log(`Recieved order: ${size} ${topping} pizza`);
+  drinkMachine.serverDrink(size);
+});
+
+pizzaShop.order("Large", "cheese");
+pizzaShop.displayOrderNumber();
