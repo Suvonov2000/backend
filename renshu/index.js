@@ -26,3 +26,15 @@ const pathObject = {
 };
 
 console.log(path.format(pathObject));
+
+// events mavzusi
+
+const EvenEmitter = require("events");
+
+const eventEmitter = new EvenEmitter();
+
+const connectHandler = () => {
+  console.log("Successfully connected to database");
+};
+
+eventEmitter.on("connect", connectHandler);
