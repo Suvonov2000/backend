@@ -28,3 +28,9 @@ const writeFile = () => {
 };
 
 writeFile();
+
+const readFile = (readFilePath) => {
+  const data = fs.readFileSync(readFilePath, "utf-8");
+  console.log(data);
+};
+readFile("text.txt");
