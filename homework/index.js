@@ -1,8 +1,8 @@
 const fs = require("fs");
 const path = require("path");
 
-// const createFolder = (folrderNmae) => {
-//   const folderPath = path.join(__dirname, folrderNmae);
+// const createFolder = (folrderName) => {
+//   const folderPath = path.join(__dirname, folrderName);
 //   fs.mkdirSync(folderPath);
 //   console.log("Papka yaratildi");
 // };
@@ -34,3 +34,11 @@ const readFile = (readFilePath) => {
   console.log(data);
 };
 readFile("text.txt");
+
+const createFolder = (fullPath, folderName) => {
+  const folderPath = path.join(fullPath, folderName);
+  fs.mkdirSync(folderPath);
+  console.log("Papka yaratildi");
+};
+
+module.exports = { createFolder };
