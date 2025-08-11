@@ -38,3 +38,8 @@ const connectHandler = () => {
 };
 
 eventEmitter.on("connect", connectHandler);
+
+const fs = require("fs");
+
+const fileInfo = fs.readFileSync(path.join(__dirname, "test.txt"), "utf-8");
+console.log(fileInfo);
