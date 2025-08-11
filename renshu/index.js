@@ -43,3 +43,14 @@ const fs = require("fs");
 
 const fileInfo = fs.readFileSync(path.join(__dirname, "test.txt"), "utf-8");
 console.log(fileInfo);
+
+fs.appendFile(
+  path.join(__dirname, "test.txt"),
+  "I'm Umidjon\n",
+  "utf-8",
+  (err) => {
+    if (err) {
+      console.error(err);
+    }
+  }
+);
