@@ -2,7 +2,17 @@ const fs = require("fs").promises;
 const path = require("path");
 const crypto = require("crypto");
 
-const GET = () => {};
+const GET = async (params) => {
+  const data = JSON.parse(
+    await fs.readFile(path.join(__dirname, "user.json"), "utf-8")
+  );
+  return data.filter((user) =>
+    `${user.name} ${user.surname}`
+      .toLowerCase()
+      .includes(params.q.toLowerCase())
+  );
+};
+
 const POST = async (body) => {
   if (!body || !body.name || !body.surname) {
     throw new Error("Invalid body");
@@ -51,11 +61,38 @@ const PUT = async (body) => {
   );
   return updataData.find((user) => user.id === body.id);
 };
-const DELETE = () => {};
+const DELETE = async (body) => {
+  if (!body || !body.id) {
+    throw new Error("Invalid body");
+  }
+  const data = JSON.parse(
+    await fs.readFile(path.join(__dirname, "user.json"), "utf-8")
+  );
+  if (data.find((user) => user.id === body.id) === undefined) {
+    throw new Error("User not found");
+  }
+  const updataData = data.filter((user) => user.id !== body.id);
+
+  await fs.writeFile(
+    path.join(__dirname, "user.json"),
+    JSON.stringify(updataData),
+    { encoding: "utf-8" }
+  );
+  return "Deleted.";
+};
 
 // POST({ name: "Asadbek", surname: "Abduvoitov" });
-PUT({
-  id: "8928ae16-d55d-4d57-b568-2dc0399d4046",
-  name: "Umidjon",
-  surname: "Suvonov",
+
+// PUT({
+//   id: "8928ae16-d55d-4d57-b568-2dc0399d4046",
+//   name: "Umidjon",
+//   surname: "Suvonov",
+// });
+
+// DELETE({
+//   id: "1",
+// });
+
+GET({ q: "Umidjon" }).then((data) => {
+  console.log(data);
 });
