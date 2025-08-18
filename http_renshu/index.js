@@ -18,15 +18,13 @@ const fs = require("fs");
 const server = http.createServer((req, res) => {
   req.statusCode = 200;
 
-  res.setHeader("Content-Type", "image/png");
+  res.setHeader("Content-Type", "application/json");
 
-  const readableSrteam = fs.createReadStream(
-    path.join(__dirname, "registan.png")
-  );
+  const readableSrteam = fs.createReadStream(path.join(__dirname, "user.json"));
 
   readableSrteam.pipe(res);
 });
 
-server.listen(2025, () => {
+server.listen(2026, () => {
   console.log("Server ishladi");
 });
