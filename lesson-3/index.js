@@ -3,7 +3,7 @@ const EvenEmitter = require("events");
 const eventEmitter = new EvenEmitter();
 
 const connectHandler = () => {
-  console.log("Successfully connected to database");
+  console.log("Successfully connected to the database");
 };
 
 eventEmitter.on("connect", connectHandler);
