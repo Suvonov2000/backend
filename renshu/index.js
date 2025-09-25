@@ -46,7 +46,7 @@ console.log(fileInfo);
 
 fs.appendFile(
   path.join(__dirname, "test.txt"),
-  "I'm Umidjon\n",
+  "I'm Umidjon from UZB\n",
   "utf-8",
   (err) => {
     if (err) {
