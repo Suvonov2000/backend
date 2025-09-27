@@ -6,7 +6,7 @@ const server = http.createServer((req, res) => {
   console.log({ method: req.method, url: req.url, headers: req.headers });
 
   res.writeHead(404, { "Content-Type": "text/plain" });
-  res.end("Hello and welcome to my frst server.");
+  res.end("konichiva and welcome to my frst server.");
 });
 
 server.listen(8080, () => {
