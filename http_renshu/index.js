@@ -27,5 +27,5 @@ const server = http.createServer((req, res) => {
   readableSrteam.pipe(res);
 });
 server.listen(2024, () => {
-  console.log("Server ishladi");
+  console.log("Server is working");
 });
