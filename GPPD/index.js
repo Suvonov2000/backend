@@ -2,6 +2,7 @@ const fs = require("fs").promises;
 const path = require("path");
 const crypto = require("crypto");
 
+//GET search qilish uchun//
 const GET = async (params) => {
   const data = JSON.parse(
     await fs.readFile(path.join(__dirname, "user.json"), "utf-8")
@@ -13,6 +14,7 @@ const GET = async (params) => {
   );
 };
 
+//POST post uchun//
 const POST = async (body) => {
   if (!body || !body.name || !body.surname) {
     throw new Error("Invalid body");
@@ -33,9 +35,10 @@ const POST = async (body) => {
   return createUser;
 };
 
+//PUT updata qilish uchun//
 const PUT = async (body) => {
   if (!body || !body.name || !body.surname) {
-    throw new Error("Invalid body");
+    throw new Error("Invalid body side");
   }
   const data = JSON.parse(
     await fs.readFile(path.join(__dirname, "user.json"), "utf-8")
@@ -49,7 +52,7 @@ const PUT = async (body) => {
       return {
         ...user,
         name: body.name ?? user.name,
-        surname: body.name ?? user.surname,
+        surname: body.surname ?? user.surname,
       };
     }
     return user;
@@ -61,6 +64,8 @@ const PUT = async (body) => {
   );
   return updataData.find((user) => user.id === body.id);
 };
+
+//DELETE delete//
 const DELETE = async (body) => {
   if (!body || !body.id) {
     throw new Error("Invalid body");
