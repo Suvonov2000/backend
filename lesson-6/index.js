@@ -12,12 +12,12 @@ const writableStream = fs.createWriteStream(path.join(__dirname, "text.txt"));
 readableStream.pipe(writableStream);
 
 writableStream.on("finish", () => {
-  console.log("File has been written");
+  console.log("File has been written ");
 });
 
 fs.appendFile(
   path.join(__dirname, "test.txt"),
-  "Hello Uzbekistan \n",
+  "Hello Uzbekistan from Tokyo \n",
   (err) => {
     if (err) {
       console.error(err);
