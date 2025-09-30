@@ -41,6 +41,6 @@ const writableStream = fs.createWriteStream(path.join(__dirname, "test.txt"));
 readableStream.on("data", (chunk) => {
   console.log(chunk);
   writableStream.write(chunk, "utf-8", () => {
-    console.log("chunk yozildi");
+    console.log("chunk is written");
   });
 });
